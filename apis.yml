@@ -1,23 +1,104 @@
 aid: aramex
 name: Aramex
-description: 'Aramex is a company surfaced via the API Evangelist harvest backlog (source: market-gap)
-  and added to the network as a stub for full-pipeline profiling.'
+description: Aramex is a Dubai-headquartered global logistics and express transportation company. It publishes SOAP web services (Shipping, Shipments Tracking, Location and Rate Calculator) at ws.aramex.net/ShippingAPI.V2, with WSDLs published for public download; API credentials are issued through an Aramex account.
 url: https://raw.githubusercontent.com/api-evangelist/aramex/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:market-gap
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: 'enriched: 4 published WSDLs'
 specificationVersion: '0.20'
 created: '2026-10-13'
 modified: '2026-10-13'
 tags:
 - Company
-apis: []
+- Logistics
+- Shipping
+- Tracking
+- SOAP
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Hosts
+  url: hosts/aramex-hosts.yml
+- type: Vendors
+  url: vendors/aramex-vendors.yml
+- type: DomainSecurity
+  url: security/aramex-domain-security.yml
 - type: Website
   url: https://www.aramex.com
+- type: Documentation
+  url: https://www.aramex.com/developers/aramex-apis
+apis:
+- aid: aramex:aramex-shipping
+  name: Aramex Shipping Services API
+  description: Create shipments, print labels, create/cancel/validate pickups, schedule delivery, hold shipments, print commercial invoices and reserve shipment number ranges.
+  humanURL: https://www.aramex.com/developers/aramex-apis
+  baseURL: https://ws.aramex.net/ShippingAPI.V2/Shipping/Service_1_0.svc
+  tags:
+  - Shipping
+  - Labels
+  - Pickups
+  - SOAP
+  properties:
+  - type: WSDL
+    url: wsdl/aramex-shipping.wsdl
+  - type: Documentation
+    url: https://www.aramex.com/developers/aramex-apis
+- aid: aramex:aramex-tracking
+  name: Aramex Shipments Tracking API
+  description: Track shipments and pickups and check whether a shipment has been delivered.
+  humanURL: https://www.aramex.com/developers/aramex-apis
+  baseURL: https://ws.aramex.net/ShippingAPI.V2/Tracking/Service_1_0.svc
+  tags:
+  - Tracking
+  - SOAP
+  properties:
+  - type: WSDL
+    url: wsdl/aramex-tracking.wsdl
+  - type: Documentation
+    url: https://www.aramex.com/developers/aramex-apis
+- aid: aramex:aramex-location
+  name: Aramex Location Services API
+  description: Fetch countries, states, cities, offices and drop-off locations; validate addresses and check whether an address is serviced.
+  humanURL: https://www.aramex.com/developers/aramex-apis
+  baseURL: https://ws.aramex.net/ShippingAPI.V2/Location/Service_1_0.svc
+  tags:
+  - Locations
+  - Addresses
+  - SOAP
+  properties:
+  - type: WSDL
+    url: wsdl/aramex-location.wsdl
+  - type: Documentation
+    url: https://www.aramex.com/developers/aramex-apis
+- aid: aramex:aramex-ratecalculator
+  name: Aramex Rate Calculator API
+  description: Calculate shipping rates for single and multiple shipments.
+  humanURL: https://www.aramex.com/developers/aramex-apis
+  baseURL: https://ws.aramex.net/ShippingAPI.V2/RateCalculator/Service_1_0.svc
+  tags:
+  - Rates
+  - SOAP
+  properties:
+  - type: WSDL
+    url: wsdl/aramex-ratecalculator.wsdl
+  - type: Documentation
+    url: https://www.aramex.com/developers/aramex-apis
+x-coverage:
+  state: blocked
+  reason: bot-challenge
+  method: derived
+  generated: '2026-10-13'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: the company's own front door answers a browser with an anti-bot challenge, so nothing behind it is reachable by any reader
+  evidence:
+  - url: https://www.aramex.com
+    status: 403
+x-enrichment:
+  date: '2026-10-13'
+  status: enriched
+  artifacts_added: 7
+  pass: local-v5

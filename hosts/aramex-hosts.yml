@@ -1,0 +1,46 @@
+generated: '2026-10-13'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 3
+  own: 2
+  other_domain: 1
+  platform: 0
+  roles:
+  - api
+  - other
+  - website
+hosts:
+- host: api.aramex.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: aramex.com
+  role: api
+  relation: own
+- host: ws.aramex.net
+  found_by:
+  - apis[]
+  types: []
+  serves:
+  - api
+  registrable_domain: aramex.net
+  role: other
+  relation: other-domain
+- host: www.aramex.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Website
+  - Documentation
+  serves:
+  - docs
+  registrable_domain: aramex.com
+  role: website
+  relation: own

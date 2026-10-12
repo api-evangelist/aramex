@@ -64,5 +64,16 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Aramex is a company surfaced via the API Evangelist harvest backlog (source: market-gap) and added to the network as a stub for full-pipeline profiling.
-- https://www.aramex.com
+Aramex is a Dubai-headquartered global logistics and express transportation company. It publishes four SOAP web services under `https://ws.aramex.net/ShippingAPI.V2/`, each with a public WSDL. Credentials (username, password, account number, PIN, entity) are issued through an Aramex account.
+
+| API | Operations | WSDL (saved verbatim from `?singleWsdl`) |
+|---|---|---|
+| Shipping Services | CreateShipments, PrintLabel, CreatePickup, CancelPickup, ValidatePickup, ScheduleDelivery, HoldShipments, PrintCommercialInvoice, AddShipmentAttachment, ReserveShipmentNumberRange, GetLastShipmentsNumbersRange | [wsdl/aramex-shipping.wsdl](wsdl/aramex-shipping.wsdl) |
+| Shipments Tracking | TrackShipments, TrackPickup, HasShipmentBeenDelivered | [wsdl/aramex-tracking.wsdl](wsdl/aramex-tracking.wsdl) |
+| Location Services | FetchCountries, FetchCountry, FetchStates, FetchCities, FetchOffices, FetchDropOffLocations, ValidateAddress, IsAddressServiced | [wsdl/aramex-location.wsdl](wsdl/aramex-location.wsdl) |
+| Rate Calculator | CalculateRate, CalculateMultiRate | [wsdl/aramex-ratecalculator.wsdl](wsdl/aramex-ratecalculator.wsdl) |
+
+No OpenAPI is published. The developer pages and PDF manual on www.aramex.com return 403 (Access Denied) to automated retrieval, so no docs-generated contract was produced.
+
+- Website: https://www.aramex.com
+- Developers: https://www.aramex.com/developers/aramex-apis
