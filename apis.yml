@@ -66,6 +66,10 @@ apis:
   humanURL: https://www.aramex.com/developers/aramex-apis
   baseURL: https://ws.aramex.net/ShippingAPI.V2/Location/Service_1_0.svc
   tags:
+  - Location
+  - Addresses
+  - SOAP
+  tags_raw:
   - Locations
   - Addresses
   - SOAP
