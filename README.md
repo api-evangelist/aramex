@@ -64,16 +64,87 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Aramex is a Dubai-headquartered global logistics and express transportation company. It publishes four SOAP web services under `https://ws.aramex.net/ShippingAPI.V2/`, each with a public WSDL. Credentials (username, password, account number, PIN, entity) are issued through an Aramex account.
+Aramex is a Dubai-headquartered global logistics and express transportation company. It publishes SOAP web services (Shipping, Shipments Tracking, Location and Rate Calculator) at ws.aramex.net/ShippingAPI.V2, with WSDLs published for public download; API credentials are issued through an Aramex account.
 
-| API | Operations | WSDL (saved verbatim from `?singleWsdl`) |
-|---|---|---|
-| Shipping Services | CreateShipments, PrintLabel, CreatePickup, CancelPickup, ValidatePickup, ScheduleDelivery, HoldShipments, PrintCommercialInvoice, AddShipmentAttachment, ReserveShipmentNumberRange, GetLastShipmentsNumbersRange | [wsdl/aramex-shipping.wsdl](wsdl/aramex-shipping.wsdl) |
-| Shipments Tracking | TrackShipments, TrackPickup, HasShipmentBeenDelivered | [wsdl/aramex-tracking.wsdl](wsdl/aramex-tracking.wsdl) |
-| Location Services | FetchCountries, FetchCountry, FetchStates, FetchCities, FetchOffices, FetchDropOffLocations, ValidateAddress, IsAddressServiced | [wsdl/aramex-location.wsdl](wsdl/aramex-location.wsdl) |
-| Rate Calculator | CalculateRate, CalculateMultiRate | [wsdl/aramex-ratecalculator.wsdl](wsdl/aramex-ratecalculator.wsdl) |
+**Areas:** Company · Logistics · Shipping · Tracking · SOAP
 
-No OpenAPI is published. The developer pages and PDF manual on www.aramex.com return 403 (Access Denied) to automated retrieval, so no docs-generated contract was produced.
+## Aramex on APIs.io
 
-- Website: https://www.aramex.com
-- Developers: https://www.aramex.com/developers/aramex-apis
+Everything profiled for Aramex is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/aramex/](https://apis.io/providers/aramex/)** — or go straight to one of the APIs or properties below.
+
+### APIs (4)
+
+- [Aramex Shipping Services API](https://apis.io/apis/aramex/aramex-shipping/) — Create shipments, print labels, create/cancel/validate pickups, schedule delivery, hold shipments, print commercial invoices and reserve shipment number ranges.
+- [Aramex Shipments Tracking API](https://apis.io/apis/aramex/aramex-tracking/) — Track shipments and pickups and check whether a shipment has been delivered.
+- [Aramex Location Services API](https://apis.io/apis/aramex/aramex-location/) — Fetch countries, states, cities, offices and drop-off locations; validate addresses and check whether an address is serviced.
+- [Aramex Rate Calculator API](https://apis.io/apis/aramex/aramex-ratecalculator/) — Calculate shipping rates for single and multiple shipments.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Aramex Domain Security](https://apis.io/security/aramex/aramex-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.aramex.com)
+- [Documentation](https://www.aramex.com/developers/aramex-apis)
+
+## API Evangelist rating
+
+**Kin Score 13.3** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 67.9 |
+| Contract quality | 24.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 9.5 |
+| Access clarity | 0.0 |
+
+**Agent readiness 12.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/aramex/](https://apis.io/providers/aramex/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Aramex: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/aramex/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
